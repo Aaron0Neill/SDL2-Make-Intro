@@ -1,11 +1,10 @@
 SDL_INCLUDE := "C:\SDL2-2.0.16\i686-w64-mingw32\include\SDL2"
 SDL_LIB 	:= "C:\SDL2-2.0.16\i686-w64-mingw32\lib" 
 OUTPUT_NAME	:= "mainFile"
-COMP_FILES	:= "main.cpp" "game.cpp" "player.cpp"
+COMP_FILES	:= "./src/main.cpp" "./src/game.cpp" "./src/player.cpp"
 DLL			:= "-lmingw32" "-lSDL2main" "-lSDL2"
 
-BUILD_DIR 	:= ./bin
-TARGET		:= ${BUILD_DIR}/{OUTPUT_NAME}.bin
+BUILD_DIR 	:= ./build
 
 MSG_START	:= "Build Started"
 MSG_END 	:= "Build Complete"
@@ -20,5 +19,5 @@ build:
 
 	mkdir ${BUILD_DIR}
 
-	g++ -o  ${OUTPUT_NAME} ${COMP_FILES} -I${SDL_INCLUDE} -L${SDL_LIB} $(DLL)
+	g++ -o  ${BUILD_DIR}/${OUTPUT_NAME} ${COMP_FILES} -I${SDL_INCLUDE} -L${SDL_LIB} ${DLL}
 	@echo ${MSG_END}
