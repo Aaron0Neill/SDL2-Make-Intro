@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include "player.h"
 #include <string>
+#include <SDL_image.h>
 
 class Game
 {
@@ -19,8 +20,11 @@ public:
 
     bool isRunning();
 private:
+
     bool m_isRunning;
     SDL_Window* m_window;
     SDL_Renderer* m_renderer;
     Player m_player;
+    SDL_Texture* m_image;
+    SDL_Rect m_imageRect;
 };
