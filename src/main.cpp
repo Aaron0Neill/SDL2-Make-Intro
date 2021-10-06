@@ -4,7 +4,7 @@
 int main(int argc, char** argv)
 {
     Game* game = new Game();
-    game->init("DGPP Skelatol", 150,250,1366,768, SDL_WINDOW_INPUT_FOCUS);
+    game->init("DGPP Skelatol",1366,768);
     std::cout << "Loop Starting\n";
 
     while (game->isRunning())

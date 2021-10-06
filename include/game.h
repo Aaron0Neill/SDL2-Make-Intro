@@ -1,8 +1,10 @@
+#pragma once
 #include <iostream>
-#include <SDL.h>
+#include "SDL_Window_Imp.h"
+#include "SFML_Window_Imp.h"
 #include "player.h"
 #include <string>
-#include <SDL_image.h>
+#include <vector>
 
 class Game
 {
@@ -10,7 +12,7 @@ public:
     Game();
     ~Game() = default;
 
-    void init(std::string t_windowName, int t_x, int t_y, int t_width, int t_height, Uint32 t_flags);
+    void init(std::string t_windowName, int t_width, int t_height);
 
     void handleInputs();
     void update();
@@ -22,9 +24,6 @@ public:
 private:
 
     bool m_isRunning;
-    SDL_Window* m_window;
-    SDL_Renderer* m_renderer;
+    std::vector<Window*> m_rendering;
     Player m_player;
-    SDL_Texture* m_image;
-    SDL_Rect m_imageRect;
 };
